@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans:wght@300;400&family=Zilla+Slab:wght@300;400&display=swap");
+
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h3,
+h5 {
+    font-family: "Zilla Slab", serif;
+}
+
+h2,
+h4,
+h6 {
+    font-family: "Merriweather", serif;
+}
+
+a {
+    text-decoration: none;
+    background: linear-gradient(to left, #FFCD00 50%, #000000 50%) right;
+    transition: 0.2s ease-out;
+    background-size: 200% 100%;
+    color: #000000;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-bottom: 1px solid #000000;
+}
+
+a:hover {
+    background-position: left;
+}
+
+a:hover {
+    color: #FFCD00;
+}
+
+.main-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+.main-header img {
+    height: 150px;
+}
+
+.main-header h1 {
+    font-size: 2em;
+}
+
+.main-header h1 em {
+    font-weight: lighter;
+}
+
+body {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+.criteria-red {
+    background-color: #C00A35;
+    color: white;
+}
+
+.criteria-yellow {
+    background-color: #FFCD00;
+    color: black;
+}
+
+.criteria-green {
+    background-color: #24A793;
+    color: black;
+}
