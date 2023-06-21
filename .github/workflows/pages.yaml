@@ -23,7 +23,7 @@ jobs:
           python -m pip install --upgrade poetry
           poetry install -n --all-extras
       - name: Build
-        run: python main.py
+        run: poetry run python main.py
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
