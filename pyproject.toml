@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["Donatas Rasiukevičius <donatas@rasiukevicius.dev>"]
 readme = "readme.md"
-packages = [{include = "is_it_fair"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
