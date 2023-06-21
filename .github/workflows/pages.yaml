@@ -23,6 +23,9 @@ jobs:
           python -m pip install --upgrade poetry
           poetry install -n --all-extras
       - name: Build
+        env:
+          PAT: ${{ secrets.PAT }}
+          ORG: ${{ vars.ORG }}
         run: poetry run python main.py
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
