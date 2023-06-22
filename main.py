@@ -109,6 +109,7 @@ if __name__ == "__main__":
     token = os.environ["PAT"]
     org = os.environ["ORG"]
     repos = asyncio.run(get_all_repos(org, token))
+    repos = sorted(repos, key=lambda repo: repo.name)
     out = template.render({"repos": repos})
     with open("public/index.html", "w") as f:
         f.write(out)
