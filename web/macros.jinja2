@@ -10,7 +10,7 @@
 
 {% macro render_table_row(repo) %}
 <tr>
-    <td><a href="{{repo.url}}">{{ repo.name }}</a></td>
+    <td><a href="{{repo.url}}" target="_blank">{{ repo.name }}</a></td>
     <td class="criteria-{{repo.license_check.1}}">{{repo.license_check.0}}</td>
     <td class="criteria-{{repo.fork_check.1}}">{{repo.fork_check.0}}</td>
     <td class="criteria-{{repo.visibility_check.1}}">{{repo.visibility_check.0}}</td>
