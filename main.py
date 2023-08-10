@@ -20,6 +20,7 @@ class Repo:
     is_fork: bool
     description: str | None
     is_private: bool
+    is_archived: bool
     visibility: str
     created: datetime
     updated: datetime
@@ -62,12 +63,44 @@ class Repo:
             return "Not a fork", "green"
         
     @property
+    def archived_check(self) -> Criteria:
+        if self.is_archived:
+            return "Archived", "yellow"
+        else:
+            return "Not archived", "green"
+        
+    @property
     def last_update_check(self) -> Criteria:
         days = (datetime.now() - self.updated).days
         if days < 365:
             return f"{days}  day(s) ago", "green"
         else:
             return f"{days}  day(s) ago", "yellow"
+        
+@dataclass
+class Stats:
+    licenses_ok: int
+    topics_ok: int
+    visibility_ok: int
+    description_ok: int
+    public_ok: int
+
+    @classmethod
+    def from_repos(cls, repos: list[Repo]) -> "Stats":
+        licenses_ok = sum(1 for repo in repos if repo.license_check[1] == "green")
+        topics_ok = sum(1 for repo in repos if repo.topics_check[1] == "green")
+        visibility_ok = sum(1 for repo in repos if repo.visibility_check[1] == "green")
+        description_ok = sum(1 for repo in repos if repo.description_check[1] == "green")
+        public_ok = sum(1 for repo in repos if repo.visibility == "public")
+        return cls(
+            licenses_ok=licenses_ok,
+            topics_ok=topics_ok,
+            visibility_ok=visibility_ok,
+            description_ok=description_ok,
+            public_ok=public_ok,
+        )
+
+
 
 async def repo_from_resp(response) -> Repo:
     created = datetime.fromisoformat(response["created_at"].replace("Z", ""))
@@ -81,6 +114,7 @@ async def repo_from_resp(response) -> Repo:
         description=response["description"],
         is_private=response["private"],
         visibility=response["visibility"],
+        is_archived=response["archived"],
         created=created,
         updated=updated,
     )
