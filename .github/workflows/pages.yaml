@@ -34,8 +34,8 @@ jobs:
           poetry install -n --all-extras
       - name: Build
         env:
-          PAT: ${{ secrets.PAT }}
-          ORG: ${{ vars.ORG }}
+          UUDHL_PAT: ${{ secrets.UUDHL_PAT }}
+          CDH_PAT: ${{ secrets.CDH_PAT }}
         run: poetry run python main.py
       - name: Setup Pages
         uses: actions/configure-pages@v3
