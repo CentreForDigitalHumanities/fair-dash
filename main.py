@@ -140,10 +140,11 @@ async def get_all_repos(org: str, token: str) -> list[Repo]:
     return repos
 
 if __name__ == "__main__":
-    token = os.environ["PAT"]
-    org = os.environ["ORG"]
-    repos = asyncio.run(get_all_repos(org, token))
-    repos = sorted(repos, key=lambda repo: repo.name)
+    uudhl_token = os.environ["UUDHL_PAT"]
+    cdh_token = os.environ["CDH_PAT"]
+    uudhl_repos = asyncio.run(get_all_repos("UUDigitalHumanitieslab", uudhl_token))
+    cdh_repos = asyncio.run(get_all_repos("CentreForDigitalHumanities", cdh_token))
+    repos = sorted(uudhl_repos + cdh_repos, key=lambda repo: repo.name)
     out = template.render({"repos": repos})
     with open("public/index.html", "w") as f:
         f.write(out)
