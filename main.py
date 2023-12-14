@@ -152,7 +152,13 @@ async def get_org_repos(org: OrganizationConfig) -> list[Repo]:
 
 if __name__ == "__main__":
     with open("config.toml") as f:
-        config = Config(**toml.load(f))
+        data = toml.load(f)
+    config = Config(
+        organizations=[
+            OrganizationConfig(name=org["name"], token_ref=org["token_ref"])
+            for org in data["organizations"]
+        ]
+    )
     repos = []
     for org in config.organizations:
         repos += asyncio.run(get_org_repos(org))
