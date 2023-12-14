@@ -1,6 +1,7 @@
 import asyncio
 import httpx
 import os
+import toml
 from dataclasses import dataclass
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
@@ -10,6 +11,15 @@ Severity = Literal["red", "yellow", "green"]
 Criteria = tuple[str, Severity]
 env = Environment(loader=FileSystemLoader("web"))
 template = env.get_template("page.jinja2")
+
+@dataclass
+class OrganizationConfig:
+    name: str
+    token_ref: str
+
+@dataclass
+class Config:
+    organizations: list[OrganizationConfig]
 
 @dataclass
 class Repo:
@@ -119,14 +129,15 @@ async def repo_from_resp(response) -> Repo:
         updated=updated,
     )
 
-async def get_all_repos(org: str, token: str) -> list[Repo]:
+async def get_org_repos(org: OrganizationConfig) -> list[Repo]:
+    token = os.environ[org.token_ref]
     headers = {"Authorization": f"Bearer {token}"}
     repos = []
     async with httpx.AsyncClient() as client:
         page = 1
         while True:
             response = await client.get(
-                f"https://api.github.com/orgs/{org}/repos?page={page}&per_page=100",
+                f"https://api.github.com/orgs/{org.name}/repos?page={page}&per_page=100",
                 headers=headers,
             )
             if response.status_code == 200:
@@ -140,11 +151,12 @@ async def get_all_repos(org: str, token: str) -> list[Repo]:
     return repos
 
 if __name__ == "__main__":
-    uudhl_token = os.environ["UUDHL_PAT"]
-    cdh_token = os.environ["CDH_PAT"]
-    uudhl_repos = asyncio.run(get_all_repos("UUDigitalHumanitieslab", uudhl_token))
-    cdh_repos = asyncio.run(get_all_repos("CentreForDigitalHumanities", cdh_token))
-    repos = sorted(uudhl_repos + cdh_repos, key=lambda repo: repo.name)
+    with open("config.toml") as f:
+        config = Config(**toml.load(f))
+    repos = []
+    for org in config.organizations:
+        repos += asyncio.run(get_org_repos(org))
+    repos = sorted(repos, key=lambda repo: repo.name)
     out = template.render({"repos": repos})
     with open("public/index.html", "w") as f:
         f.write(out)

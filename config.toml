@@ -1,0 +1,8 @@
+[[organizations]]
+name = "UUDigitalHumanitieslab"
+token_ref = "UUDHL_PAT"
+
+[[organizations]]
+name = "CentreForDigitalHumanities"
+token_ref = "CDH_PAT"
+
