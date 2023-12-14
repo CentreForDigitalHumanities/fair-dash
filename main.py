@@ -132,6 +132,7 @@ async def repo_from_resp(response) -> Repo:
 async def get_org_repos(org: OrganizationConfig) -> list[Repo]:
     token = os.environ[org.token_ref]
     headers = {"Authorization": f"Bearer {token}"}
+    print(f"Getting repos for {org.name}")
     repos = []
     async with httpx.AsyncClient() as client:
         page = 1
@@ -148,11 +149,13 @@ async def get_org_repos(org: OrganizationConfig) -> list[Repo]:
                 page += 1
             else:
                 response.raise_for_status()
+    print(f"Got {len(repos)} repos for {org.name}")
     return repos
 
 if __name__ == "__main__":
     with open("config.toml") as f:
         data = toml.load(f)
+    print("initializing config")
     config = Config(
         organizations=[
             OrganizationConfig(name=org["name"], token_ref=org["token_ref"])
