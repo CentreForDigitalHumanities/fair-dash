@@ -80,8 +80,12 @@ class Repo:
             return "Not archived", "green"
         
     @property
+    def last_update_days(self) -> int:
+        return (datetime.now() - self.updated).days
+        
+    @property
     def last_update_check(self) -> Criteria:
-        days = (datetime.now() - self.updated).days
+        days = self.last_update_days
         if days < 365:
             return f"{days}  day(s) ago", "green"
         else:

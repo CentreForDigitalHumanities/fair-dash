@@ -17,7 +17,8 @@
     <td class="criteria-{{repo.license_check.1}}">{{repo.license_check.0}}</td>
     <td class="criteria-{{repo.topics_check.1}}">{{repo.topics_check.0}}</td>
     <td class="criteria-{{repo.description_check.1}}">{{repo.description_check.0}}</td>
-    <td class="criteria-{{repo.last_update_check.1}}">{{repo.last_update_check.0}}</td>
+    <td class="criteria-{{repo.last_update_check.1}}" data-order="{{repo.last_update_days}}">
+        {{repo.last_update_check.0}}</td>
 </tr>
 {% endmacro %}
 
