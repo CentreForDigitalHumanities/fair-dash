@@ -46,7 +46,7 @@ a:hover {
 }
 
 .main-header img {
-    height: 150px;
+    height: 100px;
 }
 
 .main-header h1 {
@@ -57,6 +57,7 @@ a:hover {
 
 .main-header h1 em {
     font-weight: lighter;
+    font-size:
 }
 
 body {
