@@ -61,14 +61,11 @@ a:hover {
 }
 
 .main-footer {
-    background-color: #888888;
+    background-color: #444444;
+    color: white;
     position: sticky;
     bottom: 0px;
     z-index: 999;
-}
-
-.main-footer p {
-    color: #444444;
     text-align: center;
     height: 30px;
 }
