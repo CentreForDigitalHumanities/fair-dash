@@ -81,8 +81,9 @@ table {
     width: 100%;
   }
 
-.thead {
+dataTable .thead {
     background-color: #FEEEC1;
+    color: black;
 }
 
 .criteria-red {
