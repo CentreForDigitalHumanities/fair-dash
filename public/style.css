@@ -38,7 +38,7 @@ a:hover {
 
 .main-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 1.5fr 1fr 1fr;
     background-color: #FFCD00;
     position: sticky;
     top: 0px;
@@ -51,8 +51,6 @@ a:hover {
 
 .main-header h1 {
     font-size: 1.2em;
-    vertical-align: middle;
-    align-content: center;
 }
 
 .main-header h1 em {
@@ -61,7 +59,6 @@ a:hover {
 }
 
 body {
-    max-width: 70%;
     margin: 0 auto;
 }
 
