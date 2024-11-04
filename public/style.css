@@ -36,7 +36,7 @@ a:hover {
     color: #FFCD00;
 }
 
-table main-header {
+.main-header {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr;
     background-color: #FFCD00;
@@ -45,17 +45,17 @@ table main-header {
     z-index: 999;
 }
 
-table main-header img {
+.main-header img {
     height: 100px;
 }
 
-table main-header h1 {
+.main-header h1 {
     font-size: 1.2em;
     vertical-align: middle;
     align-content: center;
 }
 
-table main-header h1 em {
+.main-header h1 em {
     font-weight: lighter;
     font-size:
 }
