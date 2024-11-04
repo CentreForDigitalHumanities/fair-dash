@@ -24,6 +24,7 @@
     <img src="img/uu-rgb-black.png" alt="logo" class="logo">
     <h1>{{ title }} <br> <em>{{ subtitle }}</em> </h1>
 </header>
+
 <table id="fair-table">
     <thead>
         <tr>
@@ -43,6 +44,9 @@
         {% endfor %}
     </tbody>
 </table>
+<footer class="main-footer">
+    <p> Made with ♡ by Utrecht University's <a href="https://cdh.uu.nl/" target="_blank">Centre for Digital Humanities</a></p>
+</footer>
 {% endmacro %}
 
 {% macro render_footer() %}
