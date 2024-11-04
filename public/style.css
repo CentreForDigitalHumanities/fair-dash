@@ -38,7 +38,7 @@ a:hover {
 
 .main-header {
     display: grid;
-    grid-template-columns: 0.5fr 1.5fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
     background-color: #FFCD00;
     position: sticky;
     top: 0px;
