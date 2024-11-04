@@ -1,11 +1,11 @@
 {% macro render_header(title, subtitle) %}
+{% endmacro %}
+
+{% macro render_table_row(repo) %}
 <header class="main-header">
     <img src="img/uu-rgb-black.png" alt="logo" class="logo">
     <h1>{{ title }} <br> <em>{{ subtitle }}</em> </h1>
 </header>
-{% endmacro %}
-
-{% macro render_table_row(repo) %}
 <tr>
     <td><a href="{{repo.url}}" target="_blank">{{ repo.name }}</a></td>
     <td class="criteria-{{repo.archived_check.1}}">{{repo.archived_check.0}}</td>
