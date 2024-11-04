@@ -81,7 +81,7 @@ table {
     width: 100%;
   }
 
-dataTable .thead {
+.fair-table thead {
     background-color: #FEEEC1;
     color: black;
 }
