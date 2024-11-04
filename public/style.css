@@ -60,7 +60,13 @@ a:hover {
     font-size:
 }
 
-.footer p {
+.main-footer {
+    position: sticky;
+    bottom: 0px;
+    z-index: 999;
+}
+
+.main-footer p {
     color: #888888;
     text-align: center;
 }
