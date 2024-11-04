@@ -22,6 +22,7 @@
 {% macro render_table(repos) %}
 <table id="fair-table">
     <thead>
+        {{ render_table_header() }}
         <tr>
             <th>Repository</th>
             <th>Archived</th>
