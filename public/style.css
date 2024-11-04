@@ -38,7 +38,11 @@ a:hover {
 
 .main-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: #FFCD00;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
 }
 
 .main-header img {
