@@ -51,6 +51,8 @@ a:hover {
 
 .main-header h1 {
     font-size: 1.2em;
+    vertical-align: middle;
+    align-content: center;
 }
 
 .main-header h1 em {
