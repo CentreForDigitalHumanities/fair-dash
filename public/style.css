@@ -68,8 +68,9 @@ a:hover {
 }
 
 .main-footer p {
-    color: #FFFFFF;
+    color: #444444;
     text-align: center;
+    height: 30px;
 }
 
 body {
