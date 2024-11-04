@@ -79,8 +79,13 @@ body {
 
 table {
     border-collapse: collapse;
+    color: black;
     width: 100%;
   }
+
+.thead {
+    background-color: #FEEEC1;
+}
 
 .criteria-red {
     background-color: #C00A35;
