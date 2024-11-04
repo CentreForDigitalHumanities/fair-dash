@@ -81,7 +81,7 @@ table {
     width: 100%;
   }
 
-.fair-table thead {
+table.fair-table thead {
     background-color: #FEEEC1;
     color: black;
 }
