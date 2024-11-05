@@ -85,7 +85,7 @@ table thead {
     color: black;
 }
 
-table tfoot {
+.main-footer {
     position: sticky;
     bottom: 0px;
 }
