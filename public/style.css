@@ -121,11 +121,11 @@ table tfoot th{
 }
 
 .dataTables_wrapper .dataTables_paginate {
-    color: white;
-    background-color: #444;
-    padding: 10px;
-    float: none;
-    text-align: right;
-    position: sticky;
-    bottom: 0px;
+    color: white !important;
+    background-color: #444 !important;
+    padding: 10px !important;
+    float: none !important;
+    text-align: right !important;
+    position: sticky !important;
+    bottom: 0px !important;
 }
