@@ -33,11 +33,13 @@
             <th>Last Update</th>
         </tr>
     </thead>
+    
     <tbody>
         {% for repo in repos %}
         {{ render_table_row(repo) }}
         {% endfor %}
     </tbody>
+
     <tfoot>
         <tr>
             <th colspan="8">
@@ -46,4 +48,7 @@
         </tr>
     </tfoot>
 </table>
+{% endmacro %}
+
+{% macro render_footer() %}
 {% endmacro %}
