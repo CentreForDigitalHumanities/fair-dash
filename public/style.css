@@ -85,6 +85,17 @@ table thead {
     color: black;
 }
 
+table tfoot {
+    position: sticky;
+    bottom: 0px;
+}
+table tfoot th{
+    font-weight: lighter !important;
+    text-align: center !important;
+    background-color: #444444;
+    color: white;
+}
+
 .criteria-red {
     background-color: #C00A35;
     color: white;
@@ -105,9 +116,3 @@ table thead {
     padding: .5em;
 }
 
-table tfoot th{
-    font-weight: lighter !important;
-    text-align: center !important;
-    background-color: #444444;
-    color: white;
-}
