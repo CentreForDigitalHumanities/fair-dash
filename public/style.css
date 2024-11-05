@@ -119,3 +119,17 @@ table tfoot th{
     padding: .5em;
 }
 
+#custom-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#table-info {
+    flex: 1;
+}
+
+#table-pagination {
+    flex: 1;
+    text-align: right;
+}
