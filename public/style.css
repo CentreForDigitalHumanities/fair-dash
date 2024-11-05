@@ -105,7 +105,7 @@ table thead {
     padding: .5em;
 }
 
-table .dataTable tfoot th{
+table tfoot th{
     font-weight: lighter !important;
     text-align: center;
     background-color: #444444;
