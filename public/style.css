@@ -104,3 +104,8 @@ table thead {
 .dataTables_filter {
     padding: .5em;
 }
+
+.dataTable tfoot th{
+    font-weight: lighter;
+    text-align: center;
+}
