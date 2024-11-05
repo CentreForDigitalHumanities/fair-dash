@@ -20,7 +20,6 @@
     <section id="simple-grid-page">
         {{ macros.render_header("Centre for Digital Humanities", "FAIR Dashboard") }}
         {{ macros.render_table(repos) }}
-        {{ macros.render_footer() }}
     </section>
 </body>
 
@@ -29,5 +28,11 @@
 <script>
     new DataTable('#fair-table', {
         pageLength: 50
+        dom: '<"top"lf>rt<"bottom"ip><"clear">',
+            drawCallback: function(settings) {
+                var api = this.api();
+                $('#table-info').html(api.page.info().recordsDisplay + ' entries');
+                $('#table-pagination').html($(api.table().container()).find('.dataTables_paginate'));
+        }
     });
 </script>
