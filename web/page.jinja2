@@ -26,7 +26,15 @@
 </html>
 
 <script>
-    new DataTable('#fair-table', {
-        pageLength: 50
+    $(document).ready(function() {
+        $('#fair-table').DataTable({
+            pageLength: 50,
+            dom: '<"top"lf>rt<"bottom"ip><"clear">',
+            drawCallback: function(settings) {
+                var api = this.api();
+                $('#table-info').html(api.page.info().recordsDisplay + ' entries');
+                $('#table-pagination').html($(api.table().container()).find('.dataTables_paginate'));
+            }
+        });
     });
 </script>
