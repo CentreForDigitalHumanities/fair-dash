@@ -126,4 +126,6 @@ table tfoot th{
     padding: 10px;
     float: none;
     text-align: right;
+    position: sticky;
+    bottom: 0px;
 }
