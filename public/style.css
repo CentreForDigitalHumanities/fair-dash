@@ -112,6 +112,8 @@ table tfoot th{
 }
 
 .dataTables_length,
+.dataTables_info,
+.dataTables_paginate,
 .dataTables_filter {
     padding: .5em;
 }
