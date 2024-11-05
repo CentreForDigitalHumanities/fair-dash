@@ -119,3 +119,11 @@ table tfoot th{
 .dataTables_filter {
     padding: .5em;
 }
+
+.dataTables_wrapper .dataTables_paginate {
+    color: white;
+    background-color: #444;
+    padding: 10px;
+    float: none;
+    text-align: right;
+}
