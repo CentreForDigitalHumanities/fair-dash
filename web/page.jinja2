@@ -29,10 +29,5 @@
 <script>
     new DataTable('#fair-table', {
         pageLength: 50
-        footerCallback: function (row, data, start, end, display) {
-            var api = this.api();
-            $(api.column(0).footer()).html(
-                'Total repositories: ' + api.data().length
-            );
     });
 </script>

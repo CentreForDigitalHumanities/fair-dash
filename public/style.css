@@ -102,5 +102,5 @@ table thead {
 
 .dataTables_length,
 .dataTables_filter {
-    padding-top: .755em;
+    padding: .5em;
 }
