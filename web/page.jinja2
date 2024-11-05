@@ -30,9 +30,12 @@
         $('#fair-table').DataTable({
             pageLength: 50,
             dom: '<"top"lf>rt<"bottom"ip><"clear">',
+            infoCallback: function(settings, start, end, max, total, pre) {
+                return 'Showing ' + start + ' to ' + end + ' of ' + total + ' entries';
+            },
             drawCallback: function(settings) {
                 var api = this.api();
-                $('#table-info').html(api.page.info().recordsDisplay + ' entries');
+                $('#table-info').html(api.table().container().querySelector('.dataTables_info').innerHTML);
                 $('#table-pagination').html($(api.table().container()).find('.dataTables_paginate'));
             }
         });
