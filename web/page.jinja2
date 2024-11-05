@@ -20,15 +20,14 @@
     <section id="simple-grid-page">
         {{ macros.render_header("Centre for Digital Humanities", "FAIR Dashboard") }}
         {{ macros.render_table(repos) }}
+        {{ macros.render_footer() }}
     </section>
 </body>
 
 </html>
 
 <script>
-    $(document).ready(function() {
-        $('#fair-table').DataTable({
-            pageLength: 50
-            }
-        });
+    new DataTable('#fair-table', {
+        pageLength: 50
+    });
 </script>

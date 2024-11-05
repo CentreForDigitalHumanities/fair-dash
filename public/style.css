@@ -85,10 +85,11 @@ table thead {
     color: black;
 }
 
-.main-footer {
+table tfoot {
     position: sticky;
     bottom: 0px;
 }
+
 table tfoot th{
     font-weight: lighter !important;
     text-align: center !important;
