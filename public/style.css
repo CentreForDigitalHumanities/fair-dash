@@ -106,6 +106,8 @@ table thead {
 }
 
 table .dataTable tfoot th{
-    font-weight: lighter;
+    font-weight: lighter !important;
     text-align: center;
+    background-color: #444444;
+    color: white;
 }
