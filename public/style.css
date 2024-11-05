@@ -83,11 +83,13 @@ table {
 table thead {
     background-color: #FEEEC1;
     color: black;
+    position: sticky;
+    top: 100px;
 }
 
 table tfoot {
     position: sticky;
-    bottom: 0px;
+    bottom: 60px;
 }
 
 table tfoot th{
