@@ -114,8 +114,6 @@ class Stats:
             public_ok=public_ok,
         )
 
-
-
 async def repo_from_resp(response) -> Repo:
     created = datetime.fromisoformat(response["created_at"].replace("Z", ""))
     updated = datetime.fromisoformat(response["updated_at"].replace("Z", ""))
@@ -170,5 +168,3 @@ if __name__ == "__main__":
     out = template.render({"repos": repos})
     with open("public/index.html", "w") as f:
         f.write(out)
-
-

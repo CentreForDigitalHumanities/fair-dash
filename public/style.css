@@ -100,6 +100,7 @@ table thead {
     color: black;
 }
 
-.dataTables_length {
-    margin-bottom: 20px;
+.dataTables_length,
+.dataTables_filter {
+    padding-top: .755em;
 }
