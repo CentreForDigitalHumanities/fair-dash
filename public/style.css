@@ -99,3 +99,7 @@ table thead {
     background-color: #24A793;
     color: black;
 }
+
+.dataTables_length {
+    margin-bottom: 20px;
+}
