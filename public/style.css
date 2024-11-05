@@ -107,7 +107,7 @@ table thead {
 
 table tfoot th{
     font-weight: lighter !important;
-    text-align: center;
+    text-align: center !important;
     background-color: #444444;
     color: white;
 }
